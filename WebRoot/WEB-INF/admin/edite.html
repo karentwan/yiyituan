@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>壹壹团</title>
+	
+    <meta name="keywords" content="壹壹团">
+    <meta name="author" content="万盛道"/>
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8"/>
+    
+    <script>
+    	
+    	var configUrl = {
+    			baseUrl: "http:localhost:8080/team1.0/edite_dynamic.action",
+    			method: "post"
+    	}
+    
+    </script>
+    
+ 	<!-- 配置文件 -->
+    <script type="text/javascript" src="/team1.0/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="/team1.0/ueditor/ueditor.all.js"></script>
+  	</head>
+  	<style>
+  		.title {
+  			width: 300px;
+  			margin: 0 auto;
+  		}
+  		
+  		.input {
+  			margin-left: 10px;
+  		}
+  		
+  		.editor {
+  			width:1024px;
+  			height:950px;
+  			margin: 0 auto;
+  			margin-top: 10px;
+  		}
+  		
+  		#editor {
+  			height: 800px;
+  		
+  		}
+  		
+  		.btn {
+  			font-size: 14px;
+  			margin: 0 auto;
+  			margin-top:10px;
+  		}
+  		
+  		.footer {
+  			margin: 0 auto;
+  		}
+  		
+  	</style>
+  
+  <body>
+  	<div class="title">
+  		<label>标题</label><input id="ti" class="input" type="input" placeholder="请输入标题"/>
+  	</div>
+  	<div class="editor">
+  		<script id="editor" type="text/plain" ></script>
+  	</div>
+  	<div class="footer">
+  		<form name="form" action="http://localhost:8080/team1.0/edite_dynamic.action" method="post" onsubmit="return false;">
+  			<input id="title" name="title" type="hidden" />
+  			<input id="content" name="content" type="hidden"/>
+  			<input class="btn" type="button" value="content" onclick="sub()"/>
+  		</form>
+  	</div>
+  	<script type="text/javascript">
+  		//创建editor实例
+  		var ue = UE.getEditor('editor');
+  		
+  		//获取里面的内容
+  		function getContent() {
+  			var arr = [];
+  	        //arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+  	      //  arr.push("内容为：");
+  	        arr.push(UE.getEditor('editor').getContent());
+  	        return arr.join("\n");
+  		}
+  		
+  		 function getPlainText() {
+  	        var arr = [];
+  	        arr.push(UE.getEditor('editor').getPlainTxt());
+  	        alert(arr.join('\n'))
+  	        return arr.join('\n');
+  	    }
+  		
+  		function getTitle() {
+  			var title = document.getElementById('ti');
+  			return title.value;
+  		}
+  		
+  		var sub = function() {
+  			var title =  getTitle();
+  			var content = getContent();
+  			//var data = "title=" + title + "&content=" + content;
+  			//console.log("data:" + data);
+  			var inputTitle = document.getElementById('title');
+  			console.log(inputTitle.value);
+  			inputTitle.value = title;
+  			var inputContent = document.getElementById('content');
+  			inputContent.value = content;
+  			//document.form.submit();
+  			//send(data);
+  		}
+  		
+  		//使用ajax提交内容到数据库
+  		function send(data) {
+  			var xmlHttp = new XMLHttpRequest;
+  			xmlHttp.open(configUrl.method, configUrl.baseUrl,  true);
+  			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  			xmlHttp.onreadystatechange = function() {
+  				if( xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+  					var text = xmlHttp.responseText;
+  					alert(text);
+  					console.log(text);
+  				}
+  			}
+  			xmlHttp.send(data);
+  		}
+  		
+  	</script>
+  
+  </body>
+</html>

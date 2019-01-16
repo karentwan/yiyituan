@@ -1,0 +1,51 @@
+.container{
+	width:1000px;
+}
+.container .table .tr_color{
+	border:1px solid red;
+}
+.container img{
+	margin-bottom:15px;
+}
+.container .a-local .btn{
+	margin-left:63%;
+}
+.modal-dialog{
+	width:450px;
+}
+table tr td .modal .modal-dialog .modal-content .modal-body {
+    text-align: center;
+}
+.modal .modal-dialog .modal-content .modal-body {
+    text-align: center;
+}
+table tr td .modal .modal-dialog .modal-content .modal-body .input-date{
+    display:inline-block;
+    height:25px;
+    width:155px;
+}
+.d_article{
+	display: block;
+	margin-top: 10px;
+}
+.footer {
+	width: 970px;
+	margin: 0 auto;
+	height: 103px;
+	margin-top: 25px;
+	border-top: 1px solid #cac9c9;
+	font-size:12px;
+}
+.footer .abount {
+	height: 50px;
+	line-height: 50px;
+	margin: auto; 
+	text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color:black;
+}
+.footer .footer_bottom {
+	text-align: center;
+}

@@ -1,0 +1,165 @@
+
+.top {
+	background: #f7f7f7;
+	height: 2px;
+	border-bottom: 1px solid #D8D8D8;
+}
+.top_middle {
+	width: 970px;
+	margin: 0 auto;
+}
+.top_nav {
+	float: right;
+}
+.top_nav ul li {
+	float: left;
+	line-height: 26px;
+}
+
+.top_nav ul li a {
+	color: #000;
+	margin-left: 10px;
+}
+
+.logo {
+	width: 970px;
+	height: 140px;
+	margin: 0 auto;
+}
+
+.logo_l {
+	width: 313px;
+	height: 100px;
+	float: left;
+	margin-top: 24px;
+	margin-left: 9px;
+	background: url(../image/logo_small.png) no-repeat;
+}
+
+.logo_r {
+	width: 530px;
+	height: 42px;
+	border: 1px solid #c9c9c9;
+	float: right;
+	margin-top: 29px;
+}
+
+.logo_r  .input {
+	width: 418px;
+	height: 30px;
+	border: 1px solid #c9c9c9;
+	margin: 5px;
+	margin-left: 4px;
+	float: left;
+}
+
+.logo_r .button {
+	width: 99px;
+	height: 30px;
+	border: none;
+	float: left;
+	margin-left: -5px;
+	margin-top: 5px;
+	background: #2f70d0;
+	color: white;
+/*	box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.4);*/
+
+}
+
+.nav {
+	width: 970px;
+	height: 25px;
+	margin: 0 auto;
+	border-bottom: 2px solid #0266A3;
+}
+.nav ul li {
+	float : left;
+	padding: 0 15px;
+	line-height: 25px;
+
+}
+
+.nav ul li a {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0266A3;
+}
+
+.nav ul li:hover {
+	background: #0266A3;
+}
+
+.nav ul li:hover a {
+	color: white;
+
+}
+
+.content {
+	width: 970px;
+/*	height: 600px;*/
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.content h1 {
+	font-size: 20px;
+	padding: 10px 0px 10px 0px;
+	color: #143270;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Microsoft YaHei,"微软雅黑", Arial, Helvetica, sans-serif;
+
+}
+
+.content .content_l {
+	width: 22%;
+	float: left;
+	height: 200px;
+
+}
+
+.content .content_l ul li {
+	float: left;
+	width: 100%;
+}
+
+.content .content_l .here a, .content .content_l li:hover a{
+	background: url(../image/subnav-bg.jpg) no-repeat #8c8b8b;
+	color: #ffffff;
+}
+
+.content .content_l ul li a {
+	display: block;
+	padding: 8px 30px;
+	font-size: 14px;
+	background: #e0e0e0;
+	text-decoration: none;
+	color: #143270;
+	margin-bottom: 1px;
+	font-family: Microsoft YaHei,"微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+.footer {
+	width: 970px;
+	height: 70px;
+	margin: 0 auto ;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.footer .about {
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.footer .about a {
+	color: #000;
+}
+
+.footer_bottom {
+	text-align: center;
+}
+

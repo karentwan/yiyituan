@@ -1,0 +1,56 @@
+
+.dialog {
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 120px;
+	left: 400px;
+	z-index: 999;
+	background: #fff;
+	-webkit-box-shadow:0 4px 16px rgba(0,0,0,0.225);
+}
+
+.dialog .dialog-header {
+	padding: 10px 20px;
+	border-bottom: 1px solid #eee;
+}
+
+.dialog .dialog-title {
+	font-size: 1.25em;
+}
+
+.dialog .close {
+	float: right;
+	cursor: pointer;
+	background:transparent;
+	border: 0;
+	outline: none;
+	font-size: 22.5px;
+	font-weight: bold;
+	opacity: .2;
+	line-height: 1;
+}
+
+.dialog select {
+	margin-top: 30px;
+	margin-left: 100px;
+}
+
+
+.dialog-content {
+	height: 100px;
+}
+
+.dialog .dialog-footer {
+	border-top: 1px solid #eee;
+}
+
+.dialog  .dialog-button {
+	float: right;
+	margin-top: 13px;
+	margin-right: 10px;
+}
+
+.dialog .dialog-header button:hover {
+	background: #999;
+}

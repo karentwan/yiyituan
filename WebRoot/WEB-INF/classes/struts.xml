@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 开启动态方法调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!-- 开启开发者模式 -->
+    <constant name="struts.devMode" value="true" />
+	<!-- 配置utf编码 -->
+	<constant name="struts.i18n.encoding" value="utf-8"/>
+
+	<!-- 将请求进行映射 -->
+    <package name="yiyituan" namespace="/" extends="struts-default">
+		
+	   <!-- 配置拦截器 -->
+        <interceptors>
+        	<interceptor name="checkPrivilege" class="cn.yiyituan.util.CheckPrivilegeInterceptor"></interceptor>
+       		<!-- 配置自己的拦截器 -->
+        	<interceptor-stack name="myInterceptorStack">
+        		<interceptor-ref name="checkPrivilege"></interceptor-ref>
+        		<interceptor-ref name="defaultStack"></interceptor-ref>
+        	</interceptor-stack>
+        	
+        </interceptors>
+        
+		<!-- 默认使用的action -->
+        <default-action-ref name="index" /> 
+
+		<!-- 全局结果映射 -->
+        <global-results>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+            <result name="loginUI">/WEB-INF/admin/login.jsp</result>
+            <result name="noPrivilegeError">/noPrivilegeError.jsp</result>
+            <result name="toIndex">/WEB-INF/jsp/index.jsp</result>
+        </global-results>
+        
+		<!-- 全局异常映射 -->
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+		<!-- 用来测试的action类 -->
+        <action name="index" class="indexAction">
+			<result>/WEB-INF/jsp/pc/index.jsp </result>
+        </action>
+        
+        <!-- 配置action到静态页面的映射 -->
+        <action name="nav_*" class="navigationAction" method="{1}">
+        	<result name="{1}">/WEB-INF/jsp/pc/{1}.jsp</result>
+        </action>
+        
+        <action name="content_*" class="contentAction" method="{1}">
+        	<result name="{1}">/WEB-INF/jsp/pc/content.jsp</result>
+        </action>
+        
+        <!-- 上传文件的action -->
+        <action name="uploadAction" class="uploadAction">
+        	<param name="savePath">/images</param>
+        	<result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+        
+        <!-- 后台管理页面的映射 -->
+        <action name="admin" class="adminAction" method="admin">
+        	<!-- 引用拦截器 -->
+        	<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+        	<result>/WEB-INF/admin/edite.html</result>
+        	<result name="admin">/WEB-INF/admin/editorBydiv.jsp</result>
+        </action>
+        
+        <!-- 编辑动态的Action -->
+        <action name="edite_dynamic" class="dynamicAction" >
+        	<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+        	<result >/WEB-INF/html/success.html</result>
+        </action>
+        <!-- 编辑创新文章的Action -->
+        <action name="edite_innovation" class="innovationAction">
+        	<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+        	<result> /WEB-INF/html/success.html</result>
+        </action>
+        <!-- 编辑获奖文章的Action -->
+        <action name="awards_*" class="awardsAction" method="{1}">
+        	<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+        	<result name="editeUI">/WEB-INF/admin/awards.jsp</result>
+        	<result name="edite">/WEB-INF/html/success.html</result>
+        	<result name="recommitAwards" type="redirectAction">admin_findAllAwards</result>
+        </action>
+        <!-- 编辑创新项目的Action -->
+        <action name="projectEdit_*" class="projectEditAction" method="{1}">
+       		<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+       		<result name="edit">/WEB-INF/html/success.html</result>	
+       		<result name="list">/WEB-INF/admin/entry.jsp</result>
+       		<result name="modify">/WEB-INF/html/success.html</result>
+       		<result name="delete">/WEB-INF/html/success.html</result>
+       		<result name="save">/WEB-INF/html/success.html</result>
+        </action>
+        
+        <!-- 登陆的Action -->
+        <action name="user_*" class="userAction" method="{1}">
+        	<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+        	<result name="toList" type="redirectAction">user_list</result>
+        	<result name="loginUI">/WEB-INF/admin/login.jsp</result>
+        	<result name="toIndex" type="redirectAction">admin_index</result>
+        	<result name="logout">/WEB-INF/admin/login.jsp</result>
+        	<result name="setPrivilegeUI">/WEB-INF/userAction/setPrivilegeUI.jsp</result>
+        	<result name="list">/WEB-INF/userAction/list.jsp</result>
+        	<result name="saveUI">/WEB-INF/userAction/saveUI.jsp</result>
+        </action>
+        
+        <action name="admin_*" class="editeAction" method="{1}">
+        	<!-- 引用权限拦截器 -->
+        	<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+        	<result name="findAllDynamic">/WEB-INF/admin/listDynamic.jsp</result>
+        	<result name="findAllInnovation">/WEB-INF/admin/listInnovation.jsp</result>
+        	<result name="findAllAwards">/WEB-INF/admin/listAwards.jsp</result>
+        	<result name="deleteDynamic" type="redirectAction">admin_findAllDynamic</result>
+        	<result name="deleteInnovation" type="redirectAction">admin_findAllInnovation</result>
+        	<result name="deleteAwards" type="redirectAction">admin_findAllAwards</result>
+        	<result name="modifyDynamic">/WEB-INF/admin/modify.jsp</result>
+        	<result name="modifyInnovation">/WEB-INF/admin/modifyInnovation.jsp</result>
+        	<result name="modifyAwards">/WEB-INF/admin/modifyAwards.jsp</result>
+        	<result name="recommitDynamic" type="redirectAction">admin_findAllDynamic</result>
+        	<result name="recommitInnovation" type="redirectAction">admin_findAllInnovation</result>
+        </action>
+        
+    </package>
+    
+    <!-- 配置返回json的pakage --> 
+    <package name="json" namespace="/json" extends="json-default" >
+        <!-- 配置上传文件并返回stream流的Action -->
+        <action name="jsonAction" class="jsonAction">
+			<result type="json"> 
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>        	
+        </action>
+        <!-- 配置返回创新项目的json数据流 -->
+        <action name="projectAction" class="projectAction">
+			<result type="json"> 
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>        	
+        </action>
+        
+    </package>
+
+    <!-- Add packages here -->
+
+</struts>

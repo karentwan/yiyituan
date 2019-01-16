@@ -1,0 +1,31 @@
+.content_r {
+	width: 100%;
+	float: right;
+	margin-left: 36px;
+}
+
+.content_r h2 span{
+	background: #143270;
+	font-weight: normal;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 2px 5px;
+}
+
+.content_r .union_brief p, 
+.union_hardware p, 
+.union_app p, 
+.union_website p,
+.union_webfront p,
+.union_information p,
+.union_acm p
+{
+	font-size: 14px;
+	line-height: 30px;
+	text-indent: 2em;
+	margin-top: 5px;
+}
+.hidden {
+	display: none;
+}
+

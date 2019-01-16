@@ -1,0 +1,18 @@
+
+.fl {
+	float : left;
+}
+.fr {
+	float : right;
+}
+html {
+	font : 12px '宋体';
+}
+.t {
+	font-family: Microsoft YaHei,"微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+body, table, input, textarea,
+select, button {
+	font-family: Microsoft YaHei,"微软雅黑", Arial, Helvetica, sans-serif;
+}

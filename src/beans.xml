@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  - Application context definition for JPetStore's business layer.
+  - Contains bean references to the transaction manager and to the DAOs in
+  - dataAccessContext-local/jta.xml (see web.xml's "contextConfigLocation").
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:context="http://www.springframework.org/schema/context"    
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+			http://www.springframework.org/schema/context  
+			http://www.springframework.org/schema/context/spring-context-2.5.xsd ">
+		<!-- 自动扫描与装配 bean-->
+		<!-- 这个配置的使用，让这个子包下面的所有注解都能够被Spring识别 -->
+		<context:component-scan base-package="cn.yiyituan"/>
+		
+		<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+			<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+			<!-- 配置数据库连接池 -->
+			<property name="dataSource">
+				<bean class="com.mchange.v2.c3p0.ComboPooledDataSource">
+				<!-- 数据库连接信息 -->
+					<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/db_team"/>
+					<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+					<property name="user" value="root"/>
+					<property name="password" value="root"/>
+					<!-- 其他配置 -->
+					<!-- 初始化时获取三个链接 -->
+					<property name="initialPoolSize" value="3"/>
+					<!-- 连接池中最小连接数 -->
+					<property name="minPoolSize" value="3"/>
+					<!-- 链接池中最大连接数 -->
+					<property name="maxPoolSize" value="5"/>
+					<!-- 当链接池中的连接耗尽时c3p0一次获取的连接数 -->
+					<property name="acquireIncrement" value="3"/>
+					<!-- 控制数据源内加载的prePareStatement数量 -->
+					<property name="maxStatements" value="8"/>
+					<!-- 每个statement -->
+					<property name="maxStatementsPerConnection" value="5"/>
+					
+					<property name="maxIdleTime" value="1800"/>
+					
+				</bean>
+			</property>
+		</bean>
+	<!-- 配置声明式事务管理器 (使用注解方式@Transactional就可以开事务)-->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>			
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager"/>
+		
+</beans>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>成功页面</title>
+	<meta charset="utf-8"/>
+    <meta name="keywords" content="壹壹团">
+    <meta name="description" content="成功页面">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+   <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="alert alert-success">
+        <div class="row">
+          <div class="col-md-2 col-md-offset-5">
+            添加成功!
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-5">
+            跳回到主页面<a href="./admin_index.action"><span class="num">3</span></a>......
+          </div>
+        </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    var turn = function() {
+      var number = $("span.num").text();
+      number --;
+      if( number == 0) {
+        window.location.href = './admin_index.action';
+      } else {
+        $("span.num").text(number);
+      }
+    }
+    var fun = function() {
+      setInterval(function() {
+        turn();
+      }, 1000);
+    }
+    fun();
+
+  </script>
+
+</html>

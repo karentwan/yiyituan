@@ -1,0 +1,141 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.wrap{
+	width:100%;
+/*	background:#f1f1f1;*/
+	padding-bottom: 10px
+}
+.wrap .header{
+	background:#535353; 
+	height:50px;
+	width:100%;
+	
+    position:relative; 
+}
+.wrap .header .header_auto{
+	width:970px;
+	margin:0 auto;
+}
+.wrap .header .header_left{
+	float:left;
+	margin-left: 0px;
+}
+.wrap .header .header_left span{
+/* 	display:block; */
+    color:#eeeeee;
+    font-weight: bold;
+    text-decoration:none;
+    line-height: 50px;
+    position:absolute;
+    top:5%;
+    left:20%;
+    font-size:17px;
+} 
+.wrap .header .header_input{
+	float:right;
+	margin-top: 15px;
+	margin-right:0px;
+}
+.wrap .header .header_input .text{
+	height:22px;
+    width:150px;
+    border:none;
+    border-radius: 2px;
+}
+.wrap .header .header_input .submit{
+	border:none;
+	padding: 3px 4px;
+	background:#bb910f;
+	border-radius: 2px;
+	box-shadow: 2px 2px 7px black;
+}
+.wrap .middle{
+/*	background:#ffffff;*/
+	margin:15px auto;
+	width:970px;
+	padding-bottom:25px;
+	min-height: 380px;
+}
+.nav {
+	width:970px;
+	height:25px;
+	margin : 25px auto;
+	border-bottom: 2px solid #0266A3;
+}
+ .nav li {
+ 	display:block;
+	padding:0 15px 0 15px;
+	float:left;
+	line-height: 25px;
+	font-size: 14px;
+	font-weight : bold;
+	color: #0266A3;
+}
+.nav li a {
+	color: #0266A3;
+	text-decoration:none;
+}
+.nav  li:hover {
+	background-color: #0266A3;
+}
+.nav li:hover a {
+	color:white;
+} 
+.middle h1{
+	font-size:20px;
+	width:840px;
+	height:25px;
+	padding-top:5px;
+/*	color:#848386;*/
+	font-weight:bold;
+    margin:0 auto;
+    text-align:center;
+    line-height:50px;
+ /*   border-bottom:1px dashed #9a9999;*/
+}
+.middle .article {
+	margin-left: 65px;
+	margin-right: 55px;
+	margin-top: 30px;
+}
+.middle .article p{
+	line-height:25px;
+	font-size:15px;;
+	text-indent:2em;
+/*	color:#59585a;*/
+}
+.middle span{
+	/*display: block;*/
+	font-size:20px;
+	width:840px;
+	/* height:50px; */
+	padding-top:30px;
+/*	color:#848386;*/
+    margin:0 auto;
+    text-align:center;
+  /*  line-height:50px;*/
+   /* border-bottom:1px dashed #9a9999;*/
+}
+.footer {
+	width: 970px;
+	margin: 0 auto;
+	height: 103px;
+	margin-top: 25px;
+	border-top: 1px solid #cac9c9;
+	font-size:12px;
+}
+.footer .abount {
+	height: 50px;
+	line-height: 50px;
+	margin: auto; 
+	text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color:black;
+}
+.footer .footer_bottom {
+	text-align: center;
+}

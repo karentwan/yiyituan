@@ -1,0 +1,60 @@
+
+html {
+	font-family: Microsoft YaHei,"微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+
+.title {
+	height: 80px;
+}
+
+#ti {
+	width: 600px;
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 20px;
+	border: none;
+	outline: none;
+	float: left;
+	font-size: 30px;
+}
+
+.btn form input {
+	height: 0px;
+}
+
+.btns {
+	float: right;
+	height: 80px;
+	margin-right: 80px;
+	
+}
+
+.btn {
+	width: 90px;
+	height: 40px;
+	margin-top: 20px;
+	color: white;
+	background: #2f70d0;
+	border:none;
+}
+
+.select {
+	float: left;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.select select {
+	width: 90px;
+	height: 40px;
+}
+
+#editor {
+	height: 980px;
+
+}
+
+.btns form {
+	float: left;
+}

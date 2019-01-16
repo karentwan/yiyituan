@@ -1,0 +1,262 @@
+<!DOCTYPE html>   <!-- html5的声明 -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">  <!-- 编码格式 -->
+	<meta http-equiv="X-UA_Compatible" content="IE=edge"> <!-- 为了支持IE浏览器 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1">  
+	<!-- 适应各种屏幕的布局（针对响应式布局）name="viewport":目的是获取当前设备的物理宽度 width=device-width：根据物理宽度设置网页的宽度 initial-scale=1：缩放比为1，即不缩放-->
+	<title>录入-壹壹团</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/entry.css">
+	<!-- 为了支持IE浏览器 -->
+	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script><!-- 让IE浏览器支持HTML标签 -->
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script><!-- 让IE浏览器支持响应式布局 -->
+</head>
+<body>
+	<!-- 先引入jquery，在引入bootstrap的js -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script> <!-- 这是用cdn的方式引用 -->
+<!-- 	<script src="jquery/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="jquery/query-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<div class="container">
+	    <img src="image/logo_small.png">
+     	<table class="table table-striped table-bordered">
+             <tr class="">
+             	<td>项目名称</td>
+             	<td>项目来源</td>
+             	<td>起止时间</td>
+             	<td>负责人</td>
+             	<td>录入</td>	
+             </tr>
+             <tr>
+             	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title" id="myModalLabel">
+										修改
+									</h4>
+								</div>
+								<div class="modal-body">
+									项目名称
+									<input type="text"/>
+								</div>
+								<div class="modal-body">
+									项目来源
+									<input type="text"/>
+								</div>
+								<div class="modal-body">
+									起止时间
+									<input type="text"/>
+								</div>
+								<div class="modal-body">
+									负&nbsp;&nbsp;责&nbsp;&nbsp;人
+									<input type="text"/>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+									</button>
+									<button type="button" class="btn btn-primary">
+										提交更改
+									</button>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal -->
+						</div>
+    	    	</td>
+
+             </tr>
+            <tr>
+             	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+             </tr>
+             <tr>
+             	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+             </tr>
+             <tr>
+             	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+             </tr>
+             <tr>
+             	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	      <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+             </tr>
+            <tr>
+            	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+            </tr>
+             <tr>
+            	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+            </tr>
+             <tr>
+            	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+            </tr>
+             <tr>
+            	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+            </tr>
+             <tr>
+            	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+            </tr>
+             <tr>
+            	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+    	    	</td>
+            </tr>
+            <tr>
+            	<td>项目</td>
+             	<td>来源</td>
+             	<td>时间</td>
+             	<td>负责人</td>
+             	<td>
+        	       <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">修改</button>
+                   <button class="btn btn-primary btn-xs">删除</button>
+    	    	</td>
+            </tr>
+
+		</table>
+		<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1">添加</button>
+		<div class="modal fade class1" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title" id="myModalLabel">
+										添加
+									</h4>
+								</div>
+								<div class="modal-body">
+									项目名称
+									<input type="text"/>
+								</div>
+								<div class="modal-body">
+									项目来源
+									<input type="text"/>
+								</div>
+								<div class="modal-body">
+									起止时间
+									<input type="text"/>
+								</div>
+								<div class="modal-body">
+									负&nbsp;&nbsp;责&nbsp;&nbsp;人
+									<input type="text"/>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+									</button>
+									<button type="button" class="btn btn-primary">
+										添加数据
+									</button>
+								</div>
+							</div><!-- /.modal-content -->
+						</div><!-- /.modal -->
+						</div>
+    	<span class="d_article">
+            	<span>共3条，&nbsp;分1页，&nbsp;当前第<font>1</font>页</span>&nbsp;&nbsp;
+            	<a href="#">最前页</a>
+            	<a href="#">上一页</a>
+            	<a href="#">下一页</a>
+            	<a href="#">最后页</a>
+            	&nbsp;&nbsp;&nbsp;&nbsp;转到
+            	<select>
+                   <option value="1">1</option>	
+                </select>页
+		    </span>
+ 		<div class="footer">
+			<div class="abount">
+				<a href="#">关于我们 |</a>
+				<a href="#">壹壹团 |</a>
+				<a href="#">南昌航空大学</a>
+			</div>
+			<div class="footer_bottom">
+				@Copyright 南昌航空大学壹壹团 版权所有
+			</div>
+		</div>
+   </div>
+
+</body>
+</html>
